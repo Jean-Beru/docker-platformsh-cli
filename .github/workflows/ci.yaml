@@ -1,8 +1,7 @@
-name: Release
+name: CI
 
 on:
   push:
-    branch: master
 
 jobs:
   build:
