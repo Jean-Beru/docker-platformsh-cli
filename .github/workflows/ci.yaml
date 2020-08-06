@@ -1,0 +1,15 @@
+name: Release
+
+on:
+  push:
+    branch: master
+
+jobs:
+  build:
+    name: Run Goss tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Run tests
+        run: docker-compose run --rm platformsh-cli /goss/goss --gossfile /goss/goss.yaml validate

@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  platformsh-cli:
+    image: jeanberu/docker-platformsh-cli
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - goss:/goss
+      - ./goss.yaml:/goss/goss.yaml:ro
+    depends_on:
+      - goss
+
+  goss:
+    image: aelsabbahy/goss
+    volumes:
+      - goss:/goss
+
+volumes:
+  goss:

@@ -1,0 +1,13 @@
+package:
+  git:
+    installed: true
+
+command:
+  version:
+    exit-status: 0
+    exec: "platform --version"
+    stdout:
+      - Platform.sh CLI 3.60.4
+    stderr: []
+    timeout: 10000
+    skip: false
